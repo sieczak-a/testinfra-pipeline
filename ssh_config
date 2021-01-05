@@ -1,4 +1,4 @@
 Host lab
-Hostname 192.168.33.10
-User vagrant
-StrictHostKeyChecking no
+  Hostname 192.168.3.10
+  User nickfury
+  StrictHostKeyChecking no
