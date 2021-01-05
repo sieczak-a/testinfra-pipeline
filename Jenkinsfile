@@ -21,7 +21,7 @@ pipeline {
       steps {
           sshagent(credentials : ['vagrant-id']) {
             sh '''
-              pytest --html=report.html --self-contained-html --disable-warnings --hosts=lab --ssh-config=./ssh_config test_service.py
+              pytest --html=report.html --self-contained-html --disable-warnings --hosts=lab --ssh-config=./ssh_config test_*.py
             '''
           }
           archiveArtifacts "report.html"
