@@ -8,7 +8,7 @@ pipeline {
   }
   stages {
 
-    stage ('Install dependencies') {
+    stage ('Prepare') {
     
       steps {
         sh '''
@@ -17,13 +17,14 @@ pipeline {
       }
     }
 
-    stage ('pytest') {
+    stage ('Test') {
       steps {
           sshagent(credentials : ['vagrant-id']) {
             sh '''
-              pytest --disable-warnings --hosts=lab --ssh-config=./ssh_config test_service.py
+              pytest --html=report.html --self-contained-html --disable-warnings --hosts=lab --ssh-config=./ssh_config test_service.py
             '''
           }
+          archiveArtifacts "report.html"
       }
     }
 
