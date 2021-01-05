@@ -19,7 +19,7 @@ pipeline {
 
     stage ('Test') {
       steps {
-          sshagent(credentials : ['vagrant-id']) {
+          sshagent(credentials : ['nickfury-id']) {
             sh '''
               pytest --html=report.html --self-contained-html --disable-warnings --hosts=lab --ssh-config=./ssh_config test_*.py
             '''
