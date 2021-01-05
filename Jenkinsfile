@@ -12,7 +12,7 @@ pipeline {
     
       steps {
         sh '''
-          pip install pytest-testinfra paramiko
+          pip install pytest-testinfra pytest-html paramiko
         '''
       }
     }
