@@ -1,4 +1,4 @@
 Host lab
   Hostname 192.168.33.10
-  User nickfury
+  User vagrant
   StrictHostKeyChecking no
